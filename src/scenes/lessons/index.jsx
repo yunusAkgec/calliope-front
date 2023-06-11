@@ -141,14 +141,13 @@ const Lessons = () => {
                                                          (content, index) =>
                                                             content.related_lesson === lesson.id && (
                                                                <Box key={"ctx" + content.id}>
-                                                                  <Typography variant="h4">{content.content_header}</Typography>
-
-                                                                  <Typography>{content.content_text}</Typography>
+                                                                  
                                                                   <br />
                                                                   <Box>
                                                                      <Box style={{ display: "flex" }}>
                                                                         <Box>
                                                                            <Typography variant="h4">Lesson Video</Typography>
+                                                                           <br/>
                                                                            <YouTube
                                                                               videoId={content.video_url.split("v=")[1]} // defaults -> ''
                                                                               title={"Lession Video"} // defaults -> ''
@@ -167,7 +166,9 @@ const Lessons = () => {
                                                                         </Box>
                                                                      </Box>
                                                                   </Box>
-
+                                                                  <br />
+                                                                  
+                                                                  
                                                                   {isQuizBtnVisible && (
                                                                      <Button
                                                                         style={{ marginTop: "12px" }}
@@ -179,7 +180,11 @@ const Lessons = () => {
                                                                      </Button>
                                                                   )}
                                                                   {/* öğreten mi öğretici mi olacağı burada tıkladığı buton ile karar verilir ve konferans işlemleri gerçekleşir */}
+                                                                  <>
+                                                                  </>
+                                                                  
                                                                   {quizPoint >= 80 ? (
+                                                                     <>
                                                                      <Button
                                                                         onClick={() => {
                                                                            handleClickLesson(content.related_lesson, lesson.lesson_title, "teach");
@@ -189,8 +194,25 @@ const Lessons = () => {
                                                                         color="info"
                                                                         variant="contained"
                                                                         size="medium">
-                                                                        Teach this lesson
+                                                                        Be Teacher
                                                                      </Button>
+                                                                     <Button
+                                                                           onClick={() => {
+                                                                              handleClickLesson(
+                                                                                 content.related_lesson,
+                                                                                 lesson.lesson_title,
+                                                                                 "listen"
+                                                                              );
+                                                                           }}
+                                                                           style={{ marginLeft: "12px", marginTop: "12px" }}
+                                                                           type="button"
+                                                                           color="error"
+                                                                           variant="contained"
+                                                                           size="medium">
+                                                                           Be Learner
+                                                                        </Button>
+                                                                     </>
+                                                                     
                                                                   ) : (
                                                                      quizPoint > 0 &&
                                                                      quizPoint <= 79 && (
@@ -207,10 +229,16 @@ const Lessons = () => {
                                                                            color="error"
                                                                            variant="contained"
                                                                            size="medium">
-                                                                           Listen from another student
+                                                                           Be Learner
                                                                         </Button>
+                                                                        
                                                                      )
                                                                   )}
+                                                                  <br/>   
+                                                                  <br />
+                                                                  <Typography variant="h4">{content.content_header}</Typography>
+
+                                                                  <Typography>{content.content_text}</Typography>
                                                                </Box>
                                                             )
                                                       )}
