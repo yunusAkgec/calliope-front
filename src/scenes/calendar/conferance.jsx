@@ -1,5 +1,6 @@
 import React from "react";
-import { Grid, Box, useTheme, Tooltip, Button, Typography, Radio, RadioGroup, FormControlLabel, FormControl } from "@mui/material";
+import { Grid, Box, useTheme, Tooltip, Button, Typography, Radio, RadioGroup, FormControlLabel, FormControl,FormGroup,Checkbox,Accordion,AccordionSummary, AccordionDetails } from "@mui/material";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { styled } from "@mui/system";
 import { tokens } from "../../theme";
 import { fetchConferenceById, fetchSurveysById, createSurveyAnswerById, getSurveyAnswers } from "../../services/conference";
@@ -76,13 +77,16 @@ const Conferance = () => {
                <iframe src={conference.code_editor_url} width="100%" height="720" allowFullScreen></iframe>
             </Grid>
             <Grid item xs={6}>
-               <CustomTooltipWrapper title={conference.directive_text || "Tooltip"}>
-                  <Button variant="contained" color="primary" sx={{ m: 1 }}>
-                     <Typography variant="h5" fontWeight="600">
-                        {conference.directive_header}
-                     </Typography>
-                  </Button>
-               </CustomTooltipWrapper>
+            <Accordion>
+               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                  <Typography variant="h4">Directives</Typography>
+               </AccordionSummary>
+               <AccordionDetails>
+               <Typography variant="h5">{conference.directive_text}</Typography>
+               </AccordionDetails>
+            </Accordion>
+            <br/>
+            
                <Button variant="contained" color="secondary" onClick={handleClickConferance}>
                   Conferance Over
                </Button>
