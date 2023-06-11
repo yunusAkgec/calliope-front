@@ -73,7 +73,7 @@ const Conferance = () => {
       <Box backgroundColor={colors.primary[400]}>
          <Grid container spacing={0}>
             <Grid item xs={6}>
-               <iframe src={conference.code_editor_url} width="100%" height="520" allowFullScreen></iframe>
+               <iframe src={conference.code_editor_url} width="100%" height="720" allowFullScreen></iframe>
             </Grid>
             <Grid item xs={6}>
                <CustomTooltipWrapper title={conference.directive_text || "Tooltip"}>
