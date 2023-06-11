@@ -84,7 +84,7 @@ const Lessons = () => {
    }, []);
    return (
       <Box m="20px">
-         <Header title="Dersler" subtitle="Ders listesi aşağıda listelenmiştir." />
+         <Header title="Courses" subtitle="The course list is listed below." />
          {/*ders kategorisine göre kategoriye ait dersler gerekli if kontrolleri ile kullanıcıya düzgün şekilde listelenir. */}
          {lessonsData.categories &&
             lessonsData.categories.map((category) => (
@@ -129,7 +129,7 @@ const Lessons = () => {
                                        <AccordionDetails>
                                           <Accordion>
                                              <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                                                <Typography variant="h4">Ders İçeriği</Typography>
+                                                <Typography variant="h4">Course Content</Typography>
                                              </AccordionSummary>
                                              <AccordionDetails>
                                                 <Box>

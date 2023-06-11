@@ -115,13 +115,13 @@ const Sidebar = () => {
                   </Typography>
                   {/* <Item title="Profile Form" to="/form" icon={<PersonOutlinedIcon />} selected={selected} setSelected={setSelected} /> */}
                   <Item
-                     title="Canlı Ders Anlatımları"
+                     title="Live Courses"
                      to="/calendar"
                      icon={<CalendarTodayOutlinedIcon />}
                      selected={selected}
                      setSelected={setSelected}
                   />
-                  <Item title="Dersler" to="/lessons" icon={<PlayLessonIcon />} selected={selected} setSelected={setSelected} />
+                  <Item title="Courses" to="/lessons" icon={<PlayLessonIcon />} selected={selected} setSelected={setSelected} />
                </Box>
             </Menu>
          </ProSidebar>

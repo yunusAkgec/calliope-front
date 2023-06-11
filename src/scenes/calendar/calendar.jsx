@@ -42,10 +42,10 @@ const Calendar = () => {
                      return {
                         id: conference.id,
                         title:
-                           "Konferans : " +
+                           "Conference : " +
                            conference.conference_topic +
                            "\n" +
-                           "|| Ders : " +
+                           "|| Course : " +
                            lessons.find((lesson) => lesson.id === conference.related_lesson).lesson_title,
                         date: formattedNextDay,
                         // konferans meet linki ve ilgili ders objeye tanımlanır
@@ -65,10 +65,10 @@ const Calendar = () => {
                   return {
                      id: conference.id,
                      title:
-                        "Konferans : " +
+                        "Conference : " +
                         conference.conference_topic +
                         "\n" +
-                        "|| Ders : " +
+                        "|| Course : " +
                         lessons.find((lesson) => lesson.id === conference.related_lesson).lesson_title,
                      date: formattedNextDay,
                      conference_url: conference.conference_url,
@@ -95,7 +95,7 @@ const Calendar = () => {
 
    return (
       <Box m="20px">
-         <Header title="Ders Anlatım Tarihleri" subtitle="Ders konferansları listelenmiştir" />
+         <Header title="Courses Dates" subtitle="Course conferences listed." />
 
          <Box display="flex" justifyContent="space-between">
             {/* CALENDAR SIDEBAR */}
