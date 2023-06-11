@@ -10,11 +10,11 @@ const Conferance = () => {
    const colors = tokens(theme.palette.mode);
    const [isOver, setIsOver] = React.useState(false);
    const surveyAnswerOpts = [
-      { value: 1, label: "Very few" },
-      { value: 2, label: "Fewer" },
+      { value: 1, label: "Very weak" },
+      { value: 2, label: "Weak" },
       { value: 3, label: "Normal" },
-      { value: 4, label: "Pretty" },
-      { value: 5, label: "Excessive" },
+      { value: 4, label: "Good" },
+      { value: 5, label: "Very Good" },
    ];
    const [surveyTitle, setSurveyTitle] = React.useState("");
    const [selectedOption, setSelectedOption] = React.useState(-1);
