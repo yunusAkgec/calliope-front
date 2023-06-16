@@ -14,17 +14,7 @@ import React from "react";
 import YouTube from "react-youtube";
 import { fetchQuiz } from "../../services/quiz";
 import CommentComponent from "./CommentComponent";
-const style = {
-   position: "absolute",
-   top: "50%",
-   left: "50%",
-   transform: "translate(-50%, -50%)",
-   width: 500,
-   height: 500,
-   bgcolor: "background.paper",
-   boxShadow: 24,
-   p: 4,
-};
+
 
 const Lessons = () => {
    const theme = useTheme();
@@ -67,7 +57,7 @@ const Lessons = () => {
    };
    // ilgili dersin quiz verisini çeken fonksiyondur.
    const handleFetchQuiz = (lessonId) => {
-      fetchQuiz(5).then((res) => {
+      fetchQuiz(1).then((res) => {
          setQuestions(res);
          setIsQuizBtnVisible(false);
       });

@@ -27,7 +27,7 @@ const Calendar = () => {
       let lessons = [];
       // tüm dersler bilgisi çekilir ve lessons isimli geçici değişkene atanır
       // bunun sebebi konferansların ilgili ders bilgisini de göstermesi gerekmektedir bu durumda konferans verisinde bulunan related_lesson verisi ile sağlanmaktadır
-      fetchLessons().then((res) => (lessons = res.lessons));
+      fetchLessons().then((res) => (lessons = res));
       fetchConferences().then((res) => {
          if (lessonId) {
             // lessonId varlığı burada kontrol edilip ilgili filtreleme fonksiyonu yapılmaktadır
