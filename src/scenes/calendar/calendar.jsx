@@ -9,11 +9,14 @@ import { Box, List, ListItem, ListItemText, Typography, useTheme } from "@mui/ma
 import Header from "../../components/Header";
 import { tokens } from "../../theme";
 import { fetchConferences, fetchLessons } from "../../services/lesson";
-import { useParams } from "react-router-dom";
+import { useParams,useLocation } from "react-router-dom";
 
 const Calendar = () => {
    const theme = useTheme();
    let { lessonId } = useParams();
+   const { state } = useLocation();
+   console.log(state);
+   const isLearner = state ? state.isLearner : false;
    const colors = tokens(theme.palette.mode);
    // mevcut konferansların tutulduğu state tanımlanır
    const [currentEvents, setCurrentEvents] = useState([]);
@@ -25,6 +28,7 @@ const Calendar = () => {
    // url sonunda lessonId isimli bir parametre olacaktır ?lessonId=1 gibi
    const setEvents = async () => {
       let lessons = [];
+      console.log(isLearner);
       // tüm dersler bilgisi çekilir ve lessons isimli geçici değişkene atanır
       // bunun sebebi konferansların ilgili ders bilgisini de göstermesi gerekmektedir bu durumda konferans verisinde bulunan related_lesson verisi ile sağlanmaktadır
       fetchLessons().then((res) => (lessons = res));
@@ -86,7 +90,7 @@ const Calendar = () => {
       } else {
          window.open(clickedEvent, "_blank");
       }
-      navigate("/conferance");
+      navigate("/conferance" , {state : {isLearner : isLearner}});
    };
    // sayfa ilk render olduğunda konferans verilerini çekmek için useEffect kullandık
    useEffect(() => {

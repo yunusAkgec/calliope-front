@@ -1,5 +1,5 @@
 import axios from "axios";
-const API_URL = "https://calliope-api-g72rpkruuq-uc.a.run.app";
+const API_URL = "http://localhost:8000";
 const fetchCategories = async () => {
    try {
       const response = await axios.get(`${API_URL}/lesson/category/`);
