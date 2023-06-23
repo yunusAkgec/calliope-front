@@ -99,7 +99,7 @@ const Topbar = () => {
          </Box>
          <Snackbar open={isAlertOpen} anchorOrigin={{ vertical: "top", horizontal: "right" }} autoHideDuration={6000} onClose={handleClose}>
             <Alert onClose={handleClose} severity="success" sx={{ width: "100%" }}>
-               Kullanıcı adı değiştirildi.
+               Username has been changed.
             </Alert>
          </Snackbar>
       </Box>

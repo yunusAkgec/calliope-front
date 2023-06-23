@@ -113,7 +113,7 @@ const Conferance = () => {
             <br/>
             
                <Button variant="contained" color="secondary" onClick={handleClickConferance}>
-                  Conferance Over
+                  Conference Over
                </Button>
                {isOver && (
                   <Box padding={10}>
